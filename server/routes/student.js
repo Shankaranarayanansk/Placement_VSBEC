@@ -1,4 +1,3 @@
-// server/routes/student.js
 const express = require('express');
 const { updateProfile, getProfile } = require('../controllers/studentController');
 const { protect, authorize } = require('../middleware/auth');

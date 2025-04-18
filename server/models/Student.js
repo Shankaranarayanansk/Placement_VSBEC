@@ -1,6 +1,7 @@
 // server/models/Student.js
 const mongoose = require('mongoose');
 
+// Define the Student Schema
 const StudentSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -125,10 +126,11 @@ const StudentSchema = new mongoose.Schema({
   }
 });
 
-// Update 'updatedAt' on save
+// Update 'updatedAt' before saving
 StudentSchema.pre('save', function(next) {
-  this.updatedAt = Date.now();
+  this.updatedAt = Date.now();  // Set updatedAt to the current timestamp
   next();
 });
 
+// Return the model
 module.exports = mongoose.model('Student', StudentSchema);
